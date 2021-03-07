@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="MonoDevelop.References.props" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{55922F33-12DB-41D9-B61E-52D8DB1AC94B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>MonoDevelop.FileWatcherFilter</RootNamespace>
+    <AssemblyName>MonoDevelop.FileWatcherFilter</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\bin</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\AddinInfo.cs" />
+    <Compile Include="MonoDevelop.FileWatcherFilter\FileWatcherFilterOptionsPanel.cs" />
+    <Compile Include="MonoDevelop.FileWatcherFilter\FileWatcherFilterStartupHandler.cs" />
+    <Compile Include="MonoDevelop.FileWatcherFilter\FileWatcherFilterOptions.cs" />
+    <Compile Include="MonoDevelop.FileWatcherFilter\FileWatcherFilterService.cs" />
+    <Compile Include="MonoDevelop.Core\RegexGenerator.cs" />
+    <Compile Include="MonoDevelop.FileWatcherFilter\ActiveFileWatcherFilter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\MonoDevelop.FileWatcherFilter.addin.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="MonoDevelop.FileWatcherFilter\" />
+    <Folder Include="MonoDevelop.Core\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

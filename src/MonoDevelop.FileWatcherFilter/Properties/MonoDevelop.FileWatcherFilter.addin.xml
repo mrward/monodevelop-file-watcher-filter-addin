@@ -1,0 +1,18 @@
+﻿<ExtensionModel>
+	<Runtime>
+		<Import assembly="MonoDevelop.FileWatcherFilter.dll" />
+	</Runtime>
+
+	<Extension path="/MonoDevelop/Ide/GlobalOptionsDialog/TextEditor">
+		<Section
+			id="FileWatcherExclude"
+			icon="md-prefs-source"
+			_label="Files"
+			fill="true"
+			class="MonoDevelop.FileWatcherFilter.FileWatcherFilterOptionsPanel" />
+	</Extension>
+
+	<Extension path="/MonoDevelop/Ide/StartupHandlers">
+		<Class class="MonoDevelop.FileWatcherFilter.FileWatcherFilterStartupHandler" />
+	</Extension>
+</ExtensionModel>
