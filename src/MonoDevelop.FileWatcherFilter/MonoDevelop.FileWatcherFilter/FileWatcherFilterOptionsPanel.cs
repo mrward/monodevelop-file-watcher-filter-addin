@@ -113,9 +113,20 @@ namespace MonoDevelop.FileWatcherFilter
 
 		public override void Dispose ()
 		{
-			globPatternsListView.SelectionChanged -= GlobPatternsListViewSelectionChanged;
-			addButton.Clicked -= AddButtonClicked;
-			removeButton.Clicked -= RemoveButtonClicked;
+			if (globPatternsListView != null) {
+				globPatternsListView.SelectionChanged -= GlobPatternsListViewSelectionChanged;
+				globPatternsListView = null;
+			}
+
+			if (addButton != null) {
+				addButton.Clicked -= AddButtonClicked;
+				addButton = null;
+			}
+
+			if (removeButton != null) {
+				removeButton.Clicked -= RemoveButtonClicked;
+				removeButton = null;
+			}
 
 			base.Dispose ();
 		}
