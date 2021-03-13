@@ -114,7 +114,10 @@ namespace MonoDevelop.FileWatcherFilter
 		public override void Dispose ()
 		{
 			if (globPatternsListView != null) {
-				globPatternsListView.SelectionChanged -= GlobPatternsListViewSelectionChanged;
+				// Not possible to remove the SelectionChanged event handler at this point.
+				// The Gtk.TreeView.Selection is null at this point and XWT throws a null
+				// reference exception here.
+				//globPatternsListView.SelectionChanged -= GlobPatternsListViewSelectionChanged;
 				globPatternsListView = null;
 			}
 
